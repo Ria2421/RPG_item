@@ -36,7 +36,13 @@ namespace RPG_Item
     {
         static void Main(string[] args)
         {
-
+            // 道具屋のアイテムリスト
+            List<Item> shopList = new List<Item>()
+            {
+                new Item() { ID = 1, Name = "なべのふた", Price = 300 },
+                new Item() { ID = 2, Name = "どうのつるぎ", Price = 500},
+                new Item() { ID = 3, Name = "やくそう", Price = 100}
+            };
         }
     }
 }
