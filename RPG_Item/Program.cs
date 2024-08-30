@@ -47,6 +47,10 @@ namespace RPG_Item
 
     internal class Program
     {
+        /// <summary>
+        /// メイン処理
+        /// </summary>
+        /// <param name="args"></param>
         static void Main(string[] args)
         {
             // プレイヤー作成
@@ -69,6 +73,9 @@ namespace RPG_Item
 
             while (true)
             {
+                //---------------------------
+                // 表示処理
+
                 // 所持金の表示
                 Console.WriteLine("[ プレイヤーの所持金 ]" + "\n" + player.HaveMoney + "$" + "\n");
 
@@ -96,60 +103,32 @@ namespace RPG_Item
                     Console.WriteLine();    // 改行
                 }
 
+                //---------------------------
                 // 入力処理
+
                 Console.Write("購入するアイテムIDを入力 (0で終了)：");
                 var input = Console.ReadLine();
                 switch (input)
                 {
-                    case "0":
+                    case "0":   // 終了処理
                         break;
 
-                    case "1":
-                        // 所持金チェック
-                        if(player.HaveMoney < shopList[0].Price)
-                        {
-                            Console.WriteLine("所持金が足りません");
-                        }
-                        else
-                        {   // 購入処理
-                            player.HaveMoney -= shopList[0].Price;  // 所持金の減算
-                            Item item = shopList[0];                // アイテム情報の取得
-                            player.HaveItems.Add(item);             // プレイヤーの所持品に追加
-                        }
+                    case "1":   // なべのふた
+                        // 購入処理
+                        BuyItem(player, shopList[0]);
 
                         break;
 
-                    case "2":
-                        // 所持金チェック
-                        if (player.HaveMoney < shopList[1].Price)
-                        {
-                            Console.WriteLine("所持金が足りません");
-                        }
-                        else
-                        {   // 購入処理
-                            player.HaveMoney -= shopList[1].Price;  // 所持金の減算
-                            Item item = shopList[1];                // アイテム情報の取得
-                            player.HaveItems.Add(item);             // プレイヤーの所持品に追加
-                        }
+                    case "2":   // どうのつるぎ
+                        BuyItem(player, shopList[1]);
 
                         break;
 
-                    case "3":
-                        // 所持金チェック
-                        if (player.HaveMoney < shopList[2].Price)
-                        {
-                            Console.WriteLine("所持金が足りません");
-                        }
-                        else
-                        {   // 購入処理
-                            player.HaveMoney -= shopList[2].Price;  // 所持金の減算
-                            Item item = shopList[2];                // アイテム情報の取得
-                            player.HaveItems.Add(item);             // プレイヤーの所持品に追加
-                        }
-
+                    case "3":   // やくそう
+                        BuyItem(player, shopList[2]);
                         break;
 
-                    default:
+                    default:    // 無効入力
                         Console.WriteLine("有効な数字を入力してください");
                         break;
                 }
@@ -159,6 +138,25 @@ namespace RPG_Item
                 Console.WriteLine("\n" + "Enterで進む...");
                 Console.ReadLine();
                 Console.Clear();    // 画面クリア
+            }
+        }
+
+        /// <summary>
+        /// 購入処理
+        /// </summary>
+        /// <param name="player">プレイヤー情報</param>
+        /// <param name="item">  購入アイテム情報</param>
+        static void BuyItem(Player player,Item item)
+        {
+            // 所持金チェック
+            if (player.HaveMoney < item.Price)
+            {
+                Console.WriteLine("所持金が足りません");
+            }
+            else
+            {   // 購入処理
+                player.HaveMoney -= item.Price;  // 所持金の減算
+                player.HaveItems.Add(item);      // プレイヤーの所持品に追加
             }
         }
     }
