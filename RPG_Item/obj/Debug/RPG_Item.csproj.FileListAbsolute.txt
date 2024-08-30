@@ -1,0 +1,7 @@
+C:\Users\student\Documents\Visual Studio 2022\Projects\Console\RPG_Item\RPG_Item\obj\Debug\RPG_Item.csproj.AssemblyReference.cache
+C:\Users\student\Documents\Visual Studio 2022\Projects\Console\RPG_Item\RPG_Item\obj\Debug\RPG_Item.csproj.CoreCompileInputs.cache
+C:\Users\student\Documents\Visual Studio 2022\Projects\Console\RPG_Item\RPG_Item\bin\Debug\RPG_Item.exe.config
+C:\Users\student\Documents\Visual Studio 2022\Projects\Console\RPG_Item\RPG_Item\bin\Debug\RPG_Item.exe
+C:\Users\student\Documents\Visual Studio 2022\Projects\Console\RPG_Item\RPG_Item\bin\Debug\RPG_Item.pdb
+C:\Users\student\Documents\Visual Studio 2022\Projects\Console\RPG_Item\RPG_Item\obj\Debug\RPG_Item.exe
+C:\Users\student\Documents\Visual Studio 2022\Projects\Console\RPG_Item\RPG_Item\obj\Debug\RPG_Item.pdb
