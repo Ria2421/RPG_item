@@ -36,13 +36,7 @@ namespace RPG_Item
     {
         static void Main(string[] args)
         {
-            Item item = new Item();
 
-            item.Name = "Test";
-
-            Console.WriteLine(item.Name);
-
-            Console.ReadLine();
         }
     }
 }
